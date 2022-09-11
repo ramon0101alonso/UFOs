@@ -23,7 +23,9 @@ function buildTable(data) {
   
       // Loop through each field in the dataRow and add
       // each value as a table cell (td)
+      // adding one object to each row per row
       Object.values(dataRow).forEach((val) => {
+        //append data inot a table data tag
         let cell = row.append("td");
         cell.text(val);
         }
