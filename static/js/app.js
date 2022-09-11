@@ -32,3 +32,22 @@ function buildTable(data) {
       );
     });
   }
+
+function handleClick() {
+    //we are telling D3 to look for #datetime id in the HTML tags and chain value and hold it in date variable
+    let date = d3.select("#datetime").property("value");
+    // this is our default table data from the original data as imported from our data.js file
+    let filteredData = table.Data;
+    //module 11.5.4 filter with if to look for date === match exactly
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    }
+    //call the buildTable function with the filtered data as agrgument
+    buildTable(filteredData);
+}
+
+    //this is linking our code directly to the filter button and D3 execute handleClick button when clicked
+d3.selectAll("#filter-btn").on("click", handleClick);
+    //this will create a basic table from our unfiltered data pulled straight from our array
+    //ORIGINAL DATA
+buildTable(tableData);
