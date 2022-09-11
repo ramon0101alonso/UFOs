@@ -37,7 +37,7 @@ function handleClick() {
     //we are telling D3 to look for #datetime id in the HTML tags and chain value and hold it in date variable
     let date = d3.select("#datetime").property("value");
     // this is our default table data from the original data as imported from our data.js file
-    let filteredData = table.Data;
+    let filteredData = tableData;
     //module 11.5.4 filter with if to look for date === match exactly
     if (date) {
         filteredData = filteredData.filter(row => row.datetime === date);
