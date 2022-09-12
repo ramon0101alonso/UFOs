@@ -32,7 +32,7 @@ function updateFilters() {
 
     // 4a. Save the element that was changed as a variable. step 8 challenge
     //check the hint video in the challenge. only pick up 
-    var changedElement = d3.select(this).select("input");
+    var changedElement = d3.select(this);
     // 4b. Save the value that was changed as a variable. step 9 challenge
     let changedValue = changedElement.property("value");
     console.log(changedValue);
